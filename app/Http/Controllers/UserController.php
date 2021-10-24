@@ -3510,17 +3510,7 @@ public function getAns($questionId)
 
             $data = $request->except(['_token']);
 
-//            new code start 23-10-21
 
-//            new code start 23-10-21
-//            if ($data['is_drag_drop'] == 1)
-            if ($request->is_drag_drop == 1)
-            {
-//                return $data['is_drag_drop'];
-//                return $request->all();
-                return 'its drag drop';
-            }
-return 'not working';
             $question_data = [
                 'user_id' => $user->id,
                 'quiz_id' => $quiz->id,
@@ -3533,7 +3523,7 @@ return 'not working';
                 // implode(" ",$arr)
                 'created_at' => time(),
             ];
-            $question = QuizzesQuestion::create($question_data);
+//            $question = QuizzesQuestion::create($question_data);
              //            edit code start
              $mega_question_data = [
                 'user_id' => $user->id,
@@ -3546,8 +3536,19 @@ return 'not working';
                 'category' =>implode(", ",$data['category']),
                 'description'=> $data['description'],
             ];
-            MegaQuiz::create($mega_question_data);
+//            MegaQuiz::create($mega_question_data);
 //            edit code end
+            //            new code start 23-10-21
+
+//            new code start 23-10-21
+//            if ($data['is_drag_drop'] == 1)
+            if ($request->is_drag_drop == 1)
+            {
+//                return $data['is_drag_drop'];
+//                return $request->all();
+                return 'its drag drop';
+            }
+            return 'not working';
             if ($question) {
                 if (!empty($data['answers']) and count($data['answers'])) {
                     foreach ($data['answers'] as $answer) {
