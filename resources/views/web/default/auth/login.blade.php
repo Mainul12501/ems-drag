@@ -89,7 +89,7 @@
                         </div>
                         <!-- @if(get_option('user_register_captcha') == 1)
                         <div class="form-group tab-con">
-                        {!! NoCaptcha::display() !!}
+                        {{--{!! NoCaptcha::display() !!}--}} // change it after work done
                         </div>
                         @endif -->
                         <button class="btn btn-custom pull-left btn-register-user btn-register-user-r">{{ trans('main.register') }}</button>
@@ -141,5 +141,5 @@
             }
         })
     </script>
-    <!-- {!! NoCaptcha::renderJs() !!} -->
+{{--    <!-- {!! NoCaptcha::renderJs() !!} -->--}}
 @endsection

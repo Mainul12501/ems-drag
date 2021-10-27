@@ -111,123 +111,123 @@
                                     @foreach($catArray as $key=>$category)
                                         {{--                                                    {{ $key.'='.$category.'-'.$index }}--}}
                                         @if($category === 'people')
-                                            <input type="checkbox" id="people" name="category[]" {{ $category == 'people' ? 'checked' : '' }}  value="people">
+                                            <input type="checkbox" id="peoplex" name="category[]" {{ $category == 'people' ? 'checked' : '' }}  value="people">
                                         @else
                                             @if((!in_array('people', $catArray))&& ($key === $index))
-                                                <input type="checkbox" id="people" name="category[]" value="people">
+                                                <input type="checkbox" id="peoplex" name="category[]" value="people">
                                             @endif
                                         @endif
                                     @endforeach
                                 @else
-                                    <input type="checkbox" id="people" name="category[]" value="people">
+                                    <input type="checkbox" id="peoplex" name="category[]" value="people">
                                 @endif
-                                <label for="people">People</label>
+                                <label for="peoplex">People</label>
                                 <!-- </div> -->
                                 <!-- <div class="form-group1"> -->
                                 @if(!empty($catArray))
                                     @foreach($catArray as $key=>$category)
                                         @if($category == 'process')
-                                            <input type="checkbox" id="process" name="category[]" {{ $category == 'process' ? 'checked' : '' }}  value="process">
+                                            <input type="checkbox" id="processx" name="category[]" {{ $category == 'process' ? 'checked' : '' }}  value="process">
                                         @else
                                             @if((!in_array('process', $catArray))&& ($key === $index))
-                                                <input type="checkbox" id="process" name="category[]" value="process">
+                                                <input type="checkbox" id="processx" name="category[]" value="process">
                                             @endif
 
                                         @endif
                                     @endforeach
                                 @else
-                                    <input type="checkbox" id="process" name="category[]" value="process">
+                                    <input type="checkbox" id="processx" name="category[]" value="process">
                                 @endif
-                                <label for="process">Process</label>
+                                <label for="processx">Process</label>
                                 <!-- </div> -->
                                 <!-- <div class="form-group1"> -->
                                 @if(!empty($catArray))
                                     @foreach($catArray as $key=>$category)
                                         @if($category == 'enviornment')
-                                            <input type="checkbox" id="enviornment" name="category[]" {{ $category == 'enviornment' ? 'checked' : '' }}  value="enviornment">
+                                            <input type="checkbox" id="enviornmentx" name="category[]" {{ $category == 'enviornment' ? 'checked' : '' }}  value="enviornment">
                                         @else
                                             @if((!in_array('enviornment', $catArray))&& ($key === $index))
-                                                <input type="checkbox" id="environment" name="category[]" value="enviornment">
+                                                <input type="checkbox" id="environmentx" name="category[]" value="enviornment">
                                             @endif
 
                                         @endif
                                     @endforeach
                                 @else
-                                    <input type="checkbox" id="environment" name="category[]" value="enviornment">
+                                    <input type="checkbox" id="environmentx" name="category[]" value="enviornment">
                                 @endif
 
-                                <label for="environment">Environment</label>
+                                <label for="environmentx">Environment</label>
 
                                 <span><h4>PmTabata</h4></span>
                                 @if(!empty($catArray))
                                     @foreach($catArray as $key=>$category)
                                         @if($category == 'pmtabata')
-                                            <input type="checkbox" id="pmtabata" name="category[]" {{ $category == 'pmtabata' ? 'checked' : '' }}  value="pmtabata">
+                                            <input type="checkbox" id="pmtabatax" name="category[]" {{ $category == 'pmtabata' ? 'checked' : '' }}  value="pmtabata">
                                         @else
                                             @if((!in_array('pmtabata', $catArray))&& ($key === $index))
-                                                <input type="checkbox" id="pmtabata" name="category[]" value="pmtabata">
+                                                <input type="checkbox" id="pmtabatax" name="category[]" value="pmtabata">
                                             @endif
 
                                         @endif
                                     @endforeach
                                 @else
-                                    <input type="checkbox" id="pmtabata" name="category[]" value="pmtabata">
+                                    <input type="checkbox" id="pmtabatax" name="category[]" value="pmtabata">
                                 @endif
 
-                                <label for="pmtabata">PmTabata</label>
+                                <label for="pmtabatax">PmTabata</label>
 
                                 <span><h4>Question Category</h4></span>
                                 @if(!empty($catArray))
                                     @foreach($catArray as $key=>$category)
                                         @if($category == 'easy')
-                                            <input type="checkbox" id="easy" name="category[]" {{ $category == 'easy' ? 'checked' : '' }}  value="easy">
+                                            <input type="checkbox" id="easyx" name="category[]" {{ $category == 'easy' ? 'checked' : '' }}  value="easy">
                                         @else
                                             @if((!in_array('easy', $catArray))&& ($key === $index))
-                                                <input type="checkbox" id="easy" name="category[]" value="easy">
+                                                <input type="checkbox" id="easyx" name="category[]" value="easy">
                                             @endif
 
                                         @endif
                                     @endforeach
                                 @else
-                                    <input type="checkbox" id="easy" name="category[]" value="easy">
+                                    <input type="checkbox" id="easyx" name="category[]" value="easy">
                                 @endif
 
-                                <label for="easy">Practice</label>
+                                <label for="easyx">Practice</label>
 
 
                                 @if(!empty($catArray))
                                     @foreach($catArray as $key=>$category)
                                         @if($category == 'hard')
-                                            <input type="checkbox" id="hard" name="category[]" {{ $category == 'hard' ? 'checked' : '' }}  value="hard">
+                                            <input type="checkbox" id="hardx" name="category[]" {{ $category == 'hard' ? 'checked' : '' }}  value="hard">
                                         @else
                                             @if((!in_array('hard', $catArray))&& ($key === $index))
-                                                <input type="checkbox" id="hard" name="category[]" value="hard">
+                                                <input type="checkbox" id="hardx" name="category[]" value="hard">
                                             @endif
 
                                         @endif
                                     @endforeach
                                 @else
-                                    <input type="checkbox" id="hard" name="category[]" value="hard">
+                                    <input type="checkbox" id="hardx" name="category[]" value="hard">
                                 @endif
 
-                                <label for="hard">Simulated</label>
+                                <label for="hardx">Simulated</label>
 
                                 @if(!empty($catArray))
                                     @foreach($catArray as $key=>$category)
                                         @if($category == 'both')
-                                            <input type="checkbox" id="both" name="category[]" {{ $category == 'both' ? 'checked' : '' }}  value="both">
+                                            <input type="checkbox" id="bothx" name="category[]" {{ $category == 'both' ? 'checked' : '' }}  value="both">
                                         @else
                                             @if((!in_array('both', $catArray))&& ($key === $index))
-                                                <input type="checkbox" id="both" name="category[]" value="both">
+                                                <input type="checkbox" id="bothx" name="category[]" value="both">
                                             @endif
 
                                         @endif
                                     @endforeach
                                 @else
-                                    <input type="checkbox" id="both" name="category[]" value="both">
+                                    <input type="checkbox" id="bothx" name="category[]" value="both">
                                 @endif
 
-                                <label for="both">Both</label>
+                                <label for="bothx">Both</label>
 
                                 <!-- <input type="checkbox" id="Both" name="category[]" value="both">
                                <label for="both">Both</label> -->
@@ -240,36 +240,36 @@
                             @if(!empty($catArray))
                                 @foreach($catArray as $key=>$category)
                                     @if($category == 'predictive')
-                                        <input type="checkbox" id="predictive" name="category[]" {{ $category == 'predictive' ? 'checked' : '' }}  value="predictive">
+                                        <input type="checkbox" id="predictivex" name="category[]" {{ $category == 'predictive' ? 'checked' : '' }}  value="predictive">
                                     @else
                                         @if((!in_array('predictive', $catArray))&& ($key === $index))
-                                            <input type="checkbox" id="predictive" name="category[]" value="predictive">
+                                            <input type="checkbox" id="predictivex" name="category[]" value="predictive">
                                         @endif
 
                                     @endif
                                 @endforeach
                             @else
-                                <input type="checkbox" id="predictive" name="category[]" value="predictive">
+                                <input type="checkbox" id="predictivex" name="category[]" value="predictive">
                             @endif
 
-                            <label for="predictive">Predictive</label>
+                            <label for="predictivex">Predictive</label>
 
                             @if(!empty($catArray))
                                 @foreach($catArray as $key=>$category)
                                     @if($category == 'agile')
-                                        <input type="checkbox" id="agile" name="category[]" {{ $category == 'agile' ? 'checked' : '' }}  value="agile">
+                                        <input type="checkbox" id="agilex" name="category[]" {{ $category == 'agile' ? 'checked' : '' }}  value="agile">
                                     @else
                                         @if((!in_array('agile', $catArray))&& ($key === $index))
-                                            <input type="checkbox" id="agile" name="category[]" value="agile">
+                                            <input type="checkbox" id="agilex" name="category[]" value="agile">
                                         @endif
 
                                     @endif
                                 @endforeach
                             @else
-                                <input type="checkbox" id="agile" name="category[]" value="agile">
+                                <input type="checkbox" id="agilex" name="category[]" value="agile">
                             @endif
 
-                            <label for="agile">Agile</label>
+                            <label for="agilex">Agile</label>
 
                         </div>
 
@@ -278,84 +278,84 @@
                             @if(!empty($catArray))
                                 @foreach($catArray as $key=>$category)
                                     @if($category == 'creating a high performance team')
-                                        <input type="checkbox" id="High" name="category[]" {{ $category == 'creating a high performance team' ? 'checked' : '' }}  value="creating a high performance team">
+                                        <input type="checkbox" id="Highx" name="category[]" {{ $category == 'creating a high performance team' ? 'checked' : '' }}  value="creating a high performance team">
                                     @else
                                         @if((!in_array('creating a high performance team', $catArray))&& ($key === $index))
-                                            <input type="checkbox" id="High" name="category[]" value="creating a high performance team">
+                                            <input type="checkbox" id="Highx" name="category[]" value="creating a high performance team">
                                         @endif
 
                                     @endif
                                 @endforeach
                             @else
-                                <input type="checkbox" id="High" name="category[]" value="creating a high performance team">
+                                <input type="checkbox" id="Highx" name="category[]" value="creating a high performance team">
                             @endif
 
-                            <label for="High">Creating a high performance team</label>
+                            <label for="Highx">Creating a high performance team</label>
 
                             @if(!empty($catArray))
                                 @foreach($catArray as $key=>$category)
                                     @if($category == 'Starting The Project')
-                                        <input type="checkbox" id="Project" name="category[]" {{ $category == 'Starting The Project' ? 'checked' : '' }}  value="Starting The Project">
+                                        <input type="checkbox" id="Projectx" name="category[]" {{ $category == 'Starting The Project' ? 'checked' : '' }}  value="Starting The Project">
                                     @else
                                         @if((!in_array('Starting The Project', $catArray))&& ($key === $index))
-                                            <input type="checkbox" id="Project" name="category[]" value="Starting The Project">
+                                            <input type="checkbox" id="Projectx" name="category[]" value="Starting The Project">
                                         @endif
 
                                     @endif
                                 @endforeach
                             @else
-                                <input type="checkbox" id="Project" name="category[]" value="Starting The Project">
+                                <input type="checkbox" id="Projectx" name="category[]" value="Starting The Project">
                             @endif
 
-                            <label for="Project">Starting The Project</label>
+                            <label for="Projectx">Starting The Project</label>
                             @if(!empty($catArray))
                                 @foreach($catArray as $key=>$category)
                                     @if($category == 'Doing The Work')
-                                        <input type="checkbox" id="Work" name="category[]" {{ $category == 'Doing The Work' ? 'checked' : '' }}  value="Doing The Work">
+                                        <input type="checkbox" id="Workx" name="category[]" {{ $category == 'Doing The Work' ? 'checked' : '' }}  value="Doing The Work">
                                     @else
                                         @if((!in_array('Doing The Work', $catArray))&& ($key === $index))
-                                            <input type="checkbox" id="Work" name="category[]" value="Doing The Work">
+                                            <input type="checkbox" id="Workx" name="category[]" value="Doing The Work">
                                         @endif
 
                                     @endif
                                 @endforeach
                             @else
-                                <input type="checkbox" id="Work" name="category[]" value="Doing The Work">
+                                <input type="checkbox" id="Workx" name="category[]" value="Doing The Work">
                             @endif
 
-                            <label for="Work">Doing The Work</label>
+                            <label for="Workx">Doing The Work</label>
                             @if(!empty($catArray))
                                 @foreach($catArray as $key=>$category)
                                     @if($category == 'Keeping The Team On Track')
-                                        <input type="checkbox" id="Track" name="category[]" {{ $category == 'Keeping The Team On Track' ? 'checked' : '' }}  value="Keeping The Team On Track">
+                                        <input type="checkbox" id="Trackx" name="category[]" {{ $category == 'Keeping The Team On Track' ? 'checked' : '' }}  value="Keeping The Team On Track">
                                     @else
                                         @if((!in_array('Keeping The Team On Track', $catArray))&& ($key === $index))
-                                            <input type="checkbox" id="Track" name="category[]" value="Keeping The Team On Track">
+                                            <input type="checkbox" id="Trackx" name="category[]" value="Keeping The Team On Track">
                                         @endif
 
                                     @endif
                                 @endforeach
                             @else
-                                <input type="checkbox" id="Track" name="category[]" value="Keeping The Team On Track">
+                                <input type="checkbox" id="Trackx" name="category[]" value="Keeping The Team On Track">
                             @endif
 
-                            <label for="Track">Keeping The Team On Track</label>
+                            <label for="Trackx">Keeping The Team On Track</label>
                             @if(!empty($catArray))
                                 @foreach($catArray as $key=>$category)
                                     @if($category == 'Keeping The Business In Mind')
-                                        <input type="checkbox" id="Mind" name="category[]" {{ $category == 'Keeping The Business In Mind' ? 'checked' : '' }}  value="Keeping The Business In Mind">
+                                        <input type="checkbox" id="Mindx" name="category[]" {{ $category == 'Keeping The Business In Mind' ? 'checked' : '' }}  value="Keeping The Business In Mind">
                                     @else
                                         @if((!in_array('Keeping The Business In Mind', $catArray))&& ($key === $index))
-                                            <input type="checkbox" id="Mind" name="category[]" value="Keeping The Business In Mind">
+                                            <input type="checkbox" id="Mindx" name="category[]" value="Keeping The Business In Mind">
                                         @endif
 
                                     @endif
                                 @endforeach
                             @else
-                                <input type="checkbox" id="Mind" name="category[]" value="Keeping The Business In Mind">
+                                <input type="checkbox" id="Mindx" name="category[]" value="Keeping The Business In Mind">
                             @endif
 
-                            <label for="Mind">Keeping The Business In Mind</label>
+                            <label for="Mindx">Keeping The Business In Mind</label>
                         </div>
 
 
@@ -404,26 +404,52 @@
     <div class="row">
         <div class="col-md-12" id="stopPre">
             <div class="ansalrt">
+                {{ isset($answer) ? $answer : 'no data' }}
                 <p>{{ trans('main.answer_alert') }}</p>
                 <button type="button" class="btn add-btnd btn-info marl-16"><i class="mdi mdi-plus"></i></button>
             </div>
 
-{{--            answers div--}}
-            <div class="{{ (empty($answer) or (!empty($loop) and $loop->iteration == 1)) ? 'main-row-answers' : '' }} answer-box ans-b">
-                <div class="col-md-12 answer-card" id="">
-                    <div class="form-group">
-                        <label class="control-label tab-con">{{ trans('main.answer') }}</label>
-                        <button type="button" class="mrb12 btn btn-xs remove-btn btn-danger pull-right {{ !empty($answer) ? 'show' : '' }}"><i class="mdi mdi-close"></i></button>
 
-{{--                        <input type="text" name="answers[{{ (empty($answer) or (!empty($loop) and $loop->iteration == 1)) ? 'record' : $answer->id }}][title]" value="{{ !empty($answer) ? $answer->title : '' }}" placeholder="{{ trans('main.add_answer') }}" class="form-control">--}}
-                        <input type="text" name="answers[{{ (empty($answer) or (!empty($loop) and $loop->iteration == 1)) ? 'record' : $answer->id }}][title]" value="{{ !empty($answer) ? $answer->title : '' }}" placeholder="category name" class="form-control">
-                        <input type="text" name="options_name[]" class="form-control" style="margin-top: 5px;" placeholder="write options separated by comma(,)" >
-                        <div class="help-block"></div>
+            @if (!empty($question_edit))
+                @foreach ($question_edit->questionsAnswers as $answer)
+{{--                    @include(getTemplate() .'.user.quizzes.multiple_answer_form',['answer' => $answer,'i'=>$i])--}}
+                    <div class="{{ (empty($answer) or (!empty($loop) and $loop->iteration == 1)) ? 'main-row-answers' : '' }} answer-box ans-b">
+                        <div class="col-md-12 answer-card" id="">
+                            <div class="form-group">
+                                <label class="control-label tab-con">{{ trans('main.answer') }}</label>
+                                <button type="button" class="mrb12 btn btn-xs remove-btn btn-danger pull-right {{ !empty($answer) ? 'show' : '' }}"><i class="mdi mdi-close"></i></button>
+
+                                {{--                        <input type="text" name="answers[{{ (empty($answer) or (!empty($loop) and $loop->iteration == 1)) ? 'record' : $answer->id }}][title]" value="{{ !empty($answer) ? $answer->title : '' }}" placeholder="{{ trans('main.add_answer') }}" class="form-control">--}}
+                                <input type="text" name="optionCats[]" placeholder="category name" class="form-control" value="{{ !empty($answer) ? $answer->cat_name : '' }}">
+                                <input type="text" name="options[]" class="form-control" style="margin-top: 5px;" placeholder="write options separated by comma(,,)" value="{{ !empty($answer) ? $answer->title : '' }}" >
+                                <div class="help-block"></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                @endforeach
+
+            @else
+                <div class="{{ (empty($answer) or (!empty($loop) and $loop->iteration == 1)) ? 'main-row-answers' : '' }} answer-box ans-b">
+                    <div class="col-md-12 answer-card" id="">
+                        <div class="form-group">
+                            <label class="control-label tab-con">{{ trans('main.answer') }}</label>
+                            <button type="button" class="mrb12 btn btn-xs remove-btn btn-danger pull-right {{ !empty($answer) ? 'show' : '' }}"><i class="mdi mdi-close"></i></button>
+
+                            {{--                        <input type="text" name="answers[{{ (empty($answer) or (!empty($loop) and $loop->iteration == 1)) ? 'record' : $answer->id }}][title]" value="{{ !empty($answer) ? $answer->title : '' }}" placeholder="{{ trans('main.add_answer') }}" class="form-control">--}}
+                            <input type="text" name="optionCats[]" placeholder="category name" class="form-control" value="">
+                            <input type="text" name="options[]" class="form-control" style="margin-top: 5px;" placeholder="write options separated by comma(,,)" value="" >
+                            <div class="help-block"></div>
+                        </div>
+
                     </div>
 
                 </div>
+            @endif
 
-            </div>
+{{--            answers div--}}
+
 
 
 

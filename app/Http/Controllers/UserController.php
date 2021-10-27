@@ -3523,20 +3523,24 @@ public function getAns($questionId)
                 // implode(" ",$arr)
                 'created_at' => time(),
             ];
-//            $question = QuizzesQuestion::create($question_data);
+           $question = QuizzesQuestion::create($question_data);
+
              //            edit code start
-             $mega_question_data = [
-                'user_id' => $user->id,
-                'quiz_id' => $quiz->id,
-                'title' => $data['title'],
-                'image' => $data['image'],
-                'grade' => $data['grade'],
-                'question_id'   => $question->id,
-                'type' => $data['type'],
-                'category' =>implode(", ",$data['category']),
-                'description'=> $data['description'],
-            ];
-//            MegaQuiz::create($mega_question_data);
+
+            $mega_question_data = [
+               'user_id' => $user->id,
+               'quiz_id' => $quiz->id,
+               'title' => $data['title'],
+               'image' => $data['image'],
+               'grade' => $data['grade'],
+               'question_id'   => $question->id,
+               'type' => $data['type'],
+               'category' =>implode(", ",$data['category']),
+               'description'=> $data['description'],
+           ];
+        //    MegaQuiz::create($mega_question_data);
+
+
 //            edit code end
             //            new code start 23-10-21
 
@@ -3544,27 +3548,51 @@ public function getAns($questionId)
 //            if ($data['is_drag_drop'] == 1)
             if ($request->is_drag_drop == 1)
             {
-//                return $data['is_drag_drop'];
-//                return $request->all();
-                return 'its drag drop';
-            }
-            return 'not working';
-            if ($question) {
-                if (!empty($data['answers']) and count($data['answers'])) {
-                    foreach ($data['answers'] as $answer) {
-                        QuizzesQuestionsAnswer::create([
-                            'user_id' => $user->id,
-                            'question_id' => $question->id,
-                            'title' => $answer['title'],
-                            // 'image' => $answer['image'],
-                            'correct' => $answer['correct'],
-                            'created_at' => time(),
-                        ]);
+                foreach ($request->optionCats as $key=>$optionCat)
+                {
+                    foreach ($request->options as $index => $option)
+                    {
+                        if ($key === $index)
+                        {
+//                            $givenOptionsArray   = explode('|', $index);
+//                            foreach ($givenOptionsArray as $givenOption)
+//                            {
+//
+//                            }
+                            QuizzesQuestionsAnswer::create([
+                                'user_id' => $user->id,
+                                'question_id' => $question->id,
+                                'cat_name' => $optionCat,
+                                // 'image' => $answer['image'],
+                                // 'title' => $optionCat.'**'.$option,
+                                'title' => $option,
+                                'created_at' => time(),
+                            ]);
+                        }
                     }
                 }
-
+                // return $request->all();
                 return back()->with('msg', trans('main.question_create_msg'));
+            } else {
+                if ($question) {
+                    if (!empty($data['answers']) and count($data['answers'])) {
+                        foreach ($data['answers'] as $answer) {
+                            QuizzesQuestionsAnswer::create([
+                                'user_id' => $user->id,
+                                'question_id' => $question->id,
+                                'title' => $answer['title'],
+                                // 'image' => $answer['image'],
+                                'correct' => $answer['correct'],
+                                'created_at' => time(),
+                            ]);
+                        }
+                    }
+    
+                    return back()->with('msg', trans('main.question_create_msg'));
+                }
             }
+            // return 'not working';
+            
         }
 
         abort(404);
@@ -4210,9 +4238,9 @@ public function getAns($questionId)
                 if ($question->type == 'multiple') {
                     $html = (string)\View::make(getTemplate() . '.user.quizzes.multiple_question_form', $data);
                 }
-                // elseif ($question->type == 'drag-drop') {
-                //     $html = (string)\View::make(getTemplate() . '.user.quizzes.multiple_question_form', $data);
-                // }
+                 elseif ($question->type == 'drag') {
+                     $html = (string)\View::make(getTemplate() . '.user.quizzes.drag_question_form', $data);
+                 }
                 else {
                     $html = (string)\View::make(getTemplate() . '.user.quizzes.descriptive_question_form', $data);
                 }

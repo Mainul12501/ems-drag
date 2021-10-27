@@ -5,6 +5,8 @@
 @endsection
 
 @section('style')
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css"> {{--new code--}}
+
     <link rel="stylesheet" href="/assets/default/clock-counter/flipTimer.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
@@ -147,6 +149,71 @@
                                                 </div>
                                             @elseif ($question->type == 'descriptive')
                                                 <textarea name="question[{{ $question->id }}][answer]" rows="6" class="form-control"></textarea>
+                                            @elseif($question->type == 'drag')
+                                                {{--drag options start--}}
+                                                <div class="answer-items">
+                                                    <div class="row">
+                                                        {{--get options--}}
+                                                        {{--@foreach ($question->questionsAnswers as $answer)--}}
+                                                            {{--@php--}}
+                                                                {{--$optionArray    = explode(',,', $answer->title);--}}
+                                                            {{--@endphp--}}
+                                                        {{--@endforeach--}}
+                                                        {{--@php(print_r($optionArray))--}}
+                                                        {{--@foreach($optionArray as $testOptionName)--}}
+                                                            {{--{{ $testOptionName }}--}}
+                                                            {{--@foreach($testOptionName as $fuck)--}}
+                                                                {{--{{ $fuck }}--}}
+                                                            {{--@endforeach--}}
+                                                        {{--@endforeach--}}
+
+                                                        <style>
+                                                            .option-a a {
+                                                                font-size: 20px;
+                                                                cursor: pointer;
+                                                                color: red;
+                                                            }
+                                                        </style>
+                                                        {{--options section--}}
+                                                        <div class="option-a draggable" id="draggable" draggable="true">
+                                                            <a> one </a>
+                                                            <a> two </a>
+                                                            <a> three </a>
+                                                            <a> 12 </a>
+                                                            <a> 21 </a>
+                                                            <a> 22 </a>
+
+
+                                                        </div>
+
+                                                        @foreach ($question->questionsAnswers as $answer)
+
+                                                            @if (!empty($answer->cat_name))
+                                                                <div class="col-md-4">
+                                                                    <div class="py-4">
+                                                                        <div class="flex">
+                                                                            {{--@foreach($optionArray as $option)--}}
+                                                                                {{--<a>{{ $option }} </a>--}}
+                                                                            {{--@endforeach--}}
+                                                                        </div>
+                                                                    </div>
+                                                                    <p>{{ $answer->cat_name }}</p>
+                                                                    <div id="droppable" class="" style="height: 200px; border: 1px solid green">
+
+                                                                    </div>
+                                                                </div>
+                                                            @endif
+                                                        @endforeach
+                                                    </div>
+
+                                                <!-- drag-drop  start-->
+
+                                                    <!-- -->
+
+
+
+                                                    <!-- drag-drop end  -->
+                                                </div>
                                             @endif
                                         </div>
                                         <div class="card-actions d-flex align-items-center">
@@ -269,11 +336,6 @@
                                                 });
                                             </script>
 
-
-
-
-
-
                                         </div>
                                     </div>
                                     <!--  -->
@@ -330,6 +392,8 @@
 @endsection
 
 @section('script')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js'></script>
     <script type="application/javascript" src="/assets/default/clock-counter/jquery.flipTimer.js"></script>
     <script>
         "use strict";
@@ -430,6 +494,18 @@
                 $('.pagi-ul').find('#flagged'+queId).remove();
             }
         }
+    </script>
+    <script>
+        $(function () {
+            $('#draggable a').draggable();
+            $( "#droppable" ).droppable({
+                drop: function( event, ui ) {
+                    var text = $('#droppable').val();
+                    console.log(text);
+                    // alert(text);
+                }
+            });
+        })
     </script>
     <script>
 

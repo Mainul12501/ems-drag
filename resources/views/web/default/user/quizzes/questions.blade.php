@@ -190,8 +190,11 @@
             var question_id = $this.attr('data-id');
             var type = $this.attr('data-type');
             var modal = $('#multipleChoice');
+//            var dragModal = $('#dragModal');
             if (type == 'descriptive') {
                 modal = $('#descriptiveQuestion');
+            } else if (type == 'descriptive') {
+                modal = $('#dragModal');
             }
 
             modal.modal('show');
